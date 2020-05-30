@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% block title %} SCHOLARSHIPS {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header_student'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=160, width=180>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1_s'>Ganga Technical Campus</h1>  
+            </div>
+        </div>
+    </div>
+
+    <h1 align='center', style='font-size:270%; color:#2193b0;'> Scholarhips </h1>
+
+    <div class='contact'>
+        <h3 align='left', style='color:#2193b0; margin-left:12%;'>Document will load below</h3>
+        <iframe src="https://docs.google.com/gview?url=https://gtcreach.web.app/ressources/scholarships.pdf&embedded=true" style="width:900px; height:900px;" frameborder="0">
+        </iframe>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'main/base.html' %}
+{% block title %} TAKE TEST {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header_student'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=160, width=180>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1_s'>Ganga Technical Campus</h1>  
+            </div>
+        </div>
+    </div>
+
+    <form method = 'POST' class='form-group'>
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="main_student_login">
+            <h1 id='log'><b>Upcoming Test</b></h1>
+            <hr>
+            <div class="rowt">
+
+                <div class='label'>
+                    <label>Date</label>
+                </div>
+
+                <div class="field">
+                    <input type='text' id="date" name="date" value={{ date1 }} disabled></textarea>
+                </div>
+            </div>
+
+            <div class="rowt">
+
+                <div class='label'>
+                    <label>Time</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" id="time" name="time" value= {{ starttime }} disabled>
+                </div>
+            </div>
+
+            <div class="rowt">
+
+                <div class='label'>
+                    <label>Duration</label>
+                </div>
+
+                <div class="field">
+                   <input type="text" id="duration" name="duration" value= {{ duration }} disabled>
+                </div>
+            </div>
+
+            <div class="rowt">
+
+                <div class='label'>
+                    <label>Subject</label>
+                </div>
+
+                <div class="field">
+                   <input type="text" id="subject" name="subject" placeholder={{ data.subjects }} disabled>
+                </div>
+            </div>
+
+            <div class="rowt">
+                <div class='label'>
+                    <label>Total Questions</label>
+                </div>
+
+                <div class="field">
+                   <input type="text" id="questions" name="questions" placeholder={{ data.questions }} disabled>
+                </div>
+            </div>
+
+            <div class="rowt">
+                <div class='label'>
+                    <label>Total Marks</label>
+                </div>
+
+                <div class="field">
+                   <input type="text" id="marks" name="marks" placeholder={{ data.marks }} disabled>
+                </div>
+            </div>
+
+            <div class='rowt'>
+                <input type='submit' name='save' value='Take Test' id='log_btn'>
+            </div>
+        </div>
+    </form>
+{% endblock %}

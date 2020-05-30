@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% block title %} HOME {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header_student'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=160, width=180>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1_s'>Ganga Technical Campus</h1>  
+            </div>
+        </div>
+    </div>
+
+    <div class='rowt'>
+        <h1 align='center', style='font-size:248%; color:#2193b0;'> Welcome {{data.firstname}} </h1>
+    </div>
+
+    <div class='content_admin'>
+        <div class='row'>
+            <div class='a'>
+                <form method='POST'>
+                    {% csrf_token %}
+                    <input type= 'submit' name='psave' value='Your Profile'>
+                    <input type= 'submit' name='tsave' value='Upcoming Tests'>
+                    <input type= 'submit' name='rsave' value='Results'>
+                </form>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='b'>
+                <form method='POST'>
+                    {% csrf_token %}
+                    <input type= 'submit' name='fsave' value='Feedback'>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

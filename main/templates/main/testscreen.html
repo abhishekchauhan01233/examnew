@@ -1,0 +1,216 @@
+{% extends 'main/base.html' %}
+{% block title %} TEST SCREEN {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header_student'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=160, width=180>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1_s'>Ganga Technical Campus</h1>  
+            </div>
+        </div>
+    </div>
+
+    <form method = 'POST' class='form-group' id='form' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form|crispy}}
+
+    <div class="rowts">
+        <div class="columnt" style="background-color:#aaa;">
+            <h2><span class="blink"> Keep an eye on the test timer</span></h2>
+        </div>
+        <div class="columnt" style="background-color:#bbb;">
+            <h2 align="center">You are now on live test portal </h2>
+        </div>
+        <div class="columnt" style="background-color:#ccc;">
+            <h2 align="right"> Welcome
+                <font>{{ sdata.firstname }}</font>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <a class="active" href="javascript:void(0)">Time Left</a>
+        <p id="demo" name="demo">Stopwatch</p>
+    </div>
+        
+    <div class="content">
+        <div class="rowts">
+            <div class="column left" style="background-color:#aaa;">
+            </div>
+                
+            <div class="column right" style="background-color:#6dd5ed;">
+                <div class="slideshow-container">
+
+                {% for d in data %}
+                    <div class="mySlides fade">
+                        <div class='rowt'>
+                            <div class='qno'>
+                                <h1>{{ d.qno }}</h4>
+                            </div>
+                            <div class='question'>
+                                <h1>{{  d.question }}</h1>
+                            </div>
+                            <div class='timer'>
+                                <h2 id="timer" name="timer"></h2>
+                            </div>
+                        </div>
+                        <label class="containert">{{ d.optiona }}<input type="radio" name={{d.qno}} value='a'><span class="checkmark"></span></label>
+                        <label class="containert">{{ d.optionb }}<input type="radio" name={{d.qno}} value='b'><span class="checkmark"></span></label>
+                        <label class="containert">{{ d.optionc }}<input type="radio" name={{d.qno}} value='c'><span class="checkmark"></span></label>
+                        <label class="containert">{{ d.optiond }}<input type="radio" name={{d.qno}} value='d'><span class="checkmark"></span></label>
+                        <hr id ='hr'>
+                    </div>
+                {% endfor %}
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <input type='submit' name='save' value='Submit' id='log_btn'>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <hr width=50%>
+    <h5 align="center">Developed by :- <strong>Abhishek Chauhan</strong> and <strong>Vinay Saurabh</strong></h5>
+    <hr width=50%>
+
+    <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("September 17, 2020 15:26:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+               
+                // Output the result in an element with id="demo"
+                document.getElementById("demo").innerHTML = minutes + "m " + seconds + "  s ";
+               
+
+                // If the count down is over, write some text 
+                if (minutes==0) {
+                    document.getElementById("demo").innerHTML = "Test Duration Expired You must press the final submit button";
+                    if(seconds==0){
+                    clearInterval(x);
+                    submitform()
+                    window.location = "https://gtcscholarshiptest.herokuapp.com/feedback/"
+                    
+                }}
+            }, 1000);
+
+            function submitform(){
+                alert('Your time has finished');
+                document.getElementById('form').submit();
+            }
+
+        </script>
+
+        <script>
+            window.onscroll = function() {
+                myFunction()
+            };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+
+        <script>
+            var slideIndex = 1;
+
+            function plusSlides(n){
+                clearInterval(myTimer);
+                if (n<0){
+                    showSlides(slideIndex-=1);
+                }
+                else{
+                    showSlides(slideIndex+=1);
+                }
+                if (n == -1){
+                    myTimer = setInterval(function()
+                    {plusSlides(n+2)},60000);
+                }
+                else{
+                    myTimer = setInterval(function()
+                    {plusSlides(n+1)}, 60000);
+                }
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            if (n>slides.length){
+                document.getElementsByClassName("next").hide()
+            }
+
+            if(n<1){
+                slideIndex=slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+
+            slides[slideIndex-1].style.display = "block";  
+
+            }
+
+            window.addEventListener("load",function(){
+                showSlides(slideIndex);
+                myTimer=setInterval(function()
+                {plusSlides(1)}, 60000);
+            })  
+
+            var slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+
+            slideshowContainer.addEventListener('mouseenter', pause)
+            slideshowContainer.addEventListener('mouseenter', resume) 
+
+            pause = () => {
+                clearInterval(myTimer);
+            }
+
+            resume = () => {
+                clearInterval(myTimer);
+                myTimer = setInterval(function()
+                {plusSlides(slideIndex)},60000);
+            }
+
+            function exit(){
+                window.location = "http://127.0.0.1:8000/feedback/"
+            }
+
+            function submitform(){
+                alert('Your time has finished');
+                document.getElementById('form').submit();
+            }
+        </script>
+
+{% endblock %}
+
+

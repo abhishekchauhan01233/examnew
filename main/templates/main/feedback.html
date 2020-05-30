@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+{% block title %} FEEDBACK {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header_student'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=160, width=180>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1_s'>Ganga Technical Campus</h1>  
+            </div>
+        </div>
+    </div>
+
+    <form method = 'POST' class='form-group'>
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="main_student_login">
+            <h1 id='log'><b>Feedback</b></h1>
+            <hr>
+
+            <div class="rowt">
+                <div class='label'>
+                    <label>Name</label>
+                </div>
+
+                <div class="field">
+                    <input type='text' name='name' id='name' required placeholder={{data.firstname}} disabled>
+                </div>
+            </div>
+
+            <div class="rowt">
+                <div class='label'>
+                    <label>Father Name</label>
+                </div>
+
+                <div class="field">
+                    <input type='text' name='name' id='name' required placeholder={{data.fname}} disabled>
+                </div>
+            </div>
+
+            <div class="rowt">
+                <div class='label'>
+                    <label>Email</label>
+                </div>
+
+                <div class="field">
+                    <input type='text' name='name' id='name' required placeholder={{data.email}} disabled>
+                </div>
+            </div>
+            
+            <div class="rowt">
+                <div class='label'>
+                    <label>Feedback</label>
+                </div>
+
+                <div class="field">
+                    <textarea rows='8' cols='100' name='feedback' id='feedback' placeholder='Enter your Feedback here .....' required> </textarea>
+                </div>
+            </div>
+
+            <div class='row'>
+                <input type='submit' name='save' value='Submit' id='log_btn'>
+            </div>
+        </div>
+    </form>
+{% endblock %}

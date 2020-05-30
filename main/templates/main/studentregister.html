@@ -1,0 +1,251 @@
+{% extends 'main/base.html' %}
+{% block title %} REGISTER {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header_student'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=160, width=180>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1_s'>Ganga Technical Campus</h1>  
+            </div>
+        </div>
+    </div>
+    <form method = 'POST' class='form-group'>
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="main_register">
+            <h1 id='log'><b> Register </b></h1>
+            <hr>
+            <div class="row">
+                <div class="col3">
+                    <select id="course" name="course" class='select_login' onchange="populate(this.id,'branch')" required>
+                        <option value=''>Course Applying for</option>
+                        <option value='BCA'>BCA</option>
+                        <option value='BBA'>BBA</option>
+                        <option value='MBA'>MBA</option>
+                        <option value='BTech'>Engineering</option>
+                        <option value='BVocational'>B.Vocational</option>
+                        <option value='Diploma'>Diploma in Engineering</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col3">
+                    <select id="branch" name="branch" class='select_login' required>
+                        <option value=''>--Select Course First--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="rowt">
+                <div class="field1">
+                    <input type='text' name='firstname' placeholder='First Name*' required>
+                </div>
+
+                <div class="field2">
+                    <input type='text' name='lastname' placeholder='Last Name'>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='text' name='fname' placeholder='Father Name*' required>
+                </div>
+            </div>
+
+            <div class="rowt">
+                <div class="field3">
+                    <label> Date of Birth* </label>
+                </div>
+
+                <div class="field4">
+                    <input type='date' name='dob' placeholder='' min="1995-01-01" max="2012-01-01" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col3">
+                    <select id="class" name="category" class='select_login' required>
+                        <option value=''>Category</option>
+                        <option value='General'>General</option>
+                        <option value='SC'>SC</option>
+                        <option value='ST'>ST</option>
+                        <option value='OBC'>OBC</option>
+                        <option value='Minority'>Minority</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col3">
+                    <select id="class" name="qualification" class='select_login' required>
+                        <option value=''>Qualification</option>
+                        <option value='10th'>10th</option>
+                        <option value='10+2Science'>10+2 Science</option>
+                        <option value='10+2Commerce'>10+2 Commerce</option>
+                        <option value='10+2Arts'>10+2 Arts</option>
+                        <option value='Graduation'>Graduation</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='password' name='password1' placeholder='Password*' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='password' name='password2' placeholder='Re-enter Password*' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='text' name='phone' placeholder='Phone Number*' pattern="\d{10}" title=' 10digits are required ' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='text' name='email' placeholder='Email*' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='text' name='address' placeholder='Address*' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='number' name='pincode' placeholder='Pincode*' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col3">
+                    <select id="class" name="state" class='select_login' required>
+                        <option value=''>State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='text' name='district' placeholder='District*' required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col3">
+                    <select id="class" name="source" class='select_login' required>
+                        <option value=''>Source of info about Scholarship Test</option>
+                        <option value='Counsellor'>By Counsellor(Telephonic Call)</option>
+                        <option value='Socialmedia'>By Social Media(Website/Facebook/Instagram/Twitter)</option>
+                        <option value='SMS'>By SMS</option>
+                        <option value='Leaflet'>By Leaflet</option>
+                        <option value='Newspaper'>By NewsPaper</option>
+                        <option value='Friends/Relatives'>By Friends/Relatives</option>
+                        <option value='Poster'>By Poster</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col2">
+                    <input type='text' name='counsellor' placeholder='If through Counsellor(Mention Name)'>
+                </div>
+            </div>
+
+            <div class='row'>
+                <input type='submit' name='save' value='Register' id='log_btn'>
+            </div>
+
+            <div class='row'>
+                <h3>Already have an account? <a href="/studentlogin">Log in</a>.
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function populate(s1, s2) {
+            var s1 = document.getElementById(s1);
+            var s2 = document.getElementById(s2);
+            s2.innerHTML = "";
+            if (s1.value == "BTech") {
+                var optionArray = ["|", "CSE|Computer Science Engineering", "CE|Civil Engineering", "ME|Mechanical Engineering",
+                    "EE|Electrical Engineering", "ECE|Electronics & Communication Engineering"
+                ];
+            } else if (s1.value == "Diploma") {
+                var optionArray = ["|", "CE|Civil Engineering", "ME|Mechanical Engineering",
+                    "EE|Electrical Engineering", "ECE|Electronics & Communication Engineering"
+                ];
+            } else if (s1.value == "BBA") {
+                var optionArray = ["|", "BBA|BBA"];
+            } else if (s1.value == "MBA") {
+                var optionArray = ["|", "MBA|MBA"];
+            } else if (s1.value == "BCA") {
+                var optionArray = ["|", "BCA|BCA"];
+            } else if (s1.value == "BVocational") {
+                var optionArray = ["|", "T&T|Travel And Tourism", "SDIT|Software Development [ IT ]",
+                    "BFIns|Banking,Financial Services And Insurance"
+                ];
+            }
+            for (var option in optionArray) {
+                var pair = optionArray[option].split("|");
+                var newOption = document.createElement("option");
+                newOption.value = pair[0];
+                newOption.innerHTML = pair[1];
+                s2.options.add(newOption);
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+{% block title %} HOME {% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<meta name='viewport' content="width=device-width, initial-scale-1.0">
+
+{% block content %}
+    <div class='header'>
+        <div class='row'>
+            <div class='logo'>
+                <img src = "/media/images/ganga.png", height=270, width=275>
+            </div>
+            <div class='gtc'>
+                <h1 id='row1'>Ganga Technical Campus</h1>
+                <h3 id='row2'> (A Unit of Ganga Group of Institutions)</h3>
+                <h3 id='row3'> Approved by AICTE New Delhi,</h3> 
+                <h3 id='row4'> Affiliated to Maharshi Dayanand University(Rohtak) and HSBTE(Panchkula) </h3>
+                <h3 id='row5'>Recognized under Section 2(f) of the UGC Act , 1956</h4>   
+            </div>
+        </div>
+    </div>
+
+    <form method='POST'>
+        {% csrf_token %}
+
+        <div class='content'>
+            <input type= 'submit' name='asave' value='Admin' id='admin' >
+            <h1 id='welcome'>Ganga Online Scholarship Test</h1>
+            <h3><p id='gst'>GANGA SCHOLARSHIP TEST (GST-2020) is a online - Admission cum Scholarship test for admission in B.Tech, BBA, MBA, BCA, B.Voc. and Diploma courses. GST-2020 is a National Level test will be organized by GANGA TECHNICAL CAMPUS (School of Engineering & Technology -School of Diploma Engineering) a unit of GANGA GROUP OF INSTITUTIONS, DELHI-NCR. The test will be of Multiple Choice Questions based with no negative marking.</p></h3>
+            <div class='row'>
+                <input type= 'submit' name='rsave' value='Register' id='reg' >
+                <input type= 'submit' name='lsave' value='Login' id='login'>
+            </div>
+            <div class='home_row1'>
+                <input type= 'submit' name='msave' value='Exam Pattern' id='doc_btn1'>
+            </div>
+            <div class='home_row'>
+                <input type= 'submit' name='gsave' value='Guidelines' id='doc_btn2'>
+            </div>
+            <div class='home_row'>
+                <input type= 'submit' name='dsave' value='Important Dates' id='doc_btn3'>
+            </div>
+            <div class='home_row'>
+                <input type= 'submit' name='sysave' value='Syllabus' id='doc_btn4'>
+            </div>
+            <div class='home_row'>
+                <input type= 'submit' name='scsave' value='Scholarships' id='doc_btn5'>
+            </div>
+        </div>
+
+    <div class="contact">
+        <p align="center" class="full"><img src="media/images/building.jpg" height=250, width=800></p>
+        <p class="full">
+            <h3 align="center" id='about'>About Us</h3>
+        </p>
+        <p align="center" id='about_data'>
+            SCIENTISTS DREAM OF DOING GREAT THINGS AND TECHNOCRATS SHAPE THEM<br> Ganga technical campus has been established to quench the thirst of developing excellent human resource to contribute meaningfully to the nation. The rapid rate
+            of technological advancement and the information revolution have opened new series of challenges as well as opportunities. We aim to prepare a skilled work force comparable to the best in the world through implementation of cutting
+            edge technology in teaching- learning require. AT GANGA TECHNICAL CAMPUS, We inculcate human value and professional’s ethics in our students enabling them in making decisions and creating new dimensions and societal interest. We strive
+            to provide professional education in the field of engineering & technology,and management along with expose of latest and advanced techniques supplemented with tremendous performance of our country. We have carved out a distinct niche
+            for Ganga Education hub in Delhi and NCR with four colleges and eight International schools covering all streams. Ganga technical campus is not a mere addition of a feather in Ganga Education hub’s crown, but a logical extension of
+            our experience over 20 years of sheer hard work and meteoric growth.
+        </p>
+        <h3 align='center' id='about'>
+            For any Query Contact:<br>
+        </h3>
+        <p align="center" id='about_data'>
+            Cordinator :- Mr. Hitanshu Saluja (8684000906)<br>
+            Co-cordinator :- Mr. Ritesh (8684000920)<br>
+
+            Other Helpline Numbers: 08684000906 / 920 / 925 / 934
+        </p>
+    </div>
+
+    </form>
+{% endblock %}
