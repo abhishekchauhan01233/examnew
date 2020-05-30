@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$9!%u!4r9jaw^cs91e-b^^ocbsm-0kwe@l+_^jr4s%wz#w_rd*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['gtcscholarshiptest.herokuapp.com','127.0.0.1']
 
