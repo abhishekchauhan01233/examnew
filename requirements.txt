@@ -1,4 +1,4 @@
-asgiref==3.2.7
+dj-database-url==0.5.0asgiref==3.2.7
 defusedxml==0.6.0
 diff-match-patch==20181111
 dj-database-url==0.5.0
