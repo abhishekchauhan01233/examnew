@@ -1,0 +1,6 @@
+# ADD this line at the top of the settings.py
+import dj_database_url
+
+# Add this after the DATABASES line in settings.py
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
