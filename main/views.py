@@ -257,7 +257,7 @@ def take_test(request):
     except:
         return HttpResponse("<h1 align='center'>There are no scheduled tests for today!!</h1>")
 
-    return render(request, 'main/taketest.html', {'data':data, 'date1':date1, 'starttime':starttime, 'duration':timenow})
+    return render(request, 'main/taketest.html', {'data':data, 'date1':date1, 'starttime':starttime, 'duration':duration})
 
 @login_required(login_url='/studentlogin/')
 def test(request):
