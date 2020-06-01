@@ -21,7 +21,7 @@
     <form method = 'POST' class='form-group'>
         {% csrf_token %}
         {{form|crispy}}
-        <div class="main_profile">
+        <div class="main_profile animated bounceInLeft">
             <h1 id='log'><b>Profile</b></h1>
             <hr>
 
@@ -124,5 +124,10 @@
                 </div>
             </div>
         </div>
+        
+        <p align="center" id='about_data'><b>COPYRIGHT &copy; 2014-2020 GTC </b></p>   
     </form>
+<!-- !Disclaimer - you must not use this website's template in as it is form - please feel free 
+to contact me @ chiragchauhan12323@gmail.com for the source code and implementation in your use case -
+After all I too did take some help from the community -->
 {% endblock %}
