@@ -193,6 +193,7 @@ def take_test(request):
 
     timenow_ = datetime.strftime(datetime.now(),"%H:%M:%S")
     t = [timenow_,'05:30:00']
+    totalsecs=0
     for i in t:
 	    timeparts = [int(s) for s in i.split(':')]
 	    totalsecs += (timeparts[0]*60 + timeparts[1])*60 + timeparts[2]
