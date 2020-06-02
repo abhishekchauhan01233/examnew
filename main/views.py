@@ -190,7 +190,16 @@ def take_test(request):
     user = request.user
     userid = user.id
     today = date.today()
-    timenow = datetime.strftime(datetime.now(),"%H:%M:%S")
+
+    timenow_ = datetime.strftime(datetime.now(),"%H:%M:%S")
+    t = [timenow_,'05:30:00']
+    for i in t:
+	timeparts = [int(s) for s in i.split(':')]
+	totalsecs += (timeparts[0]*60 + timeparts[1])*60 + timeparts[2]
+    totalsecs, sec = divmod(totalsecs, 60)
+    hr, minute = divmod(totalsecs, 60)
+    timenow = "%02d:%02d:%02d" % (hr,minute,sec)
+
     sdata = studentdatamodel.objects.get(user_id=userid)
 
     try:
