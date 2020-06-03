@@ -105,6 +105,7 @@ def studentregister(request):
                     s.starttls()
                     s.login('Gangascholarshiptest@gmail.com','hitanshusaluja1')
                     message = '''Dear Candidate
+
 Thank you for registring to our form of Online Admission cum Scholarship Test 2020 (GST-20).
 Scholarship Test is scheduled on 21st June 2020 at 11:00 AM.
 Kindly read all instructions before appearing in test.
@@ -112,6 +113,7 @@ Kindly read all instructions before appearing in test.
 
 All The BEST
 Organizer : Ganga Technical Campus (a Unit of Ganga Group of Institutions), Delhi - NCR 
+
 For Further Information Call :
 Cordinator :- Mr. Hitanshu Saluja (8684000906)
 Co-cordinator :- Mr. Ritesh (8684000920)
