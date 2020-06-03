@@ -444,8 +444,6 @@ def result(request):
     timenow = datetime.strftime(datetime.now(),"%H:%M:%S")
     sdata = studentdatamodel.objects.get(user_id=userid)
 
-    
-
     '''try: 
         scheduletime = list(scheduletestmodel.objects.filter(date=today, course=sdata.course).order_by('time'))
         data = scheduletestmodel.objects.get(Q(date=today),Q(course=sdata.course),Q(time=scheduletime[0].time))
@@ -483,6 +481,9 @@ def result(request):
         return HttpResponse("<h1 align='center'>You had not given any exam today or exam time is over</h1>")
 
     return render(request, 'main/result.html', {'data':data, 'sdata':sdata})'''
+
+    if request.POST.get('save'):
+        return redirect('/student/')
 
     return render(request, 'main/result.html')
 

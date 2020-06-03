@@ -18,7 +18,12 @@
         </div>
     </div>
 
+    <form method = 'POST' class='form-group' id='form' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form|crispy}}
+
     <h1 align='center', style='font-size:270%; color:#2193b0;'> Result will be updated Soon </h1>
+    <input type= 'submit' name='save' value='OK' id='result_btn' >
     
     <div class='contact animated bounceInLeft'>
         <h3 align='left', style='color:#2193b0; margin-left:12%;'>Document will load below</h3>
