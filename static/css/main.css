@@ -37,8 +37,8 @@ body{
     color:  #2193b0;
 }
 #gst{
-    margin: 0px 9% 30px 9%;
-    font-size: 79%;
+    margin: 0px 15% 30px 15%;
+    font-size: 72%;
     color:#2193b0; 
 }
 
@@ -61,6 +61,7 @@ body{
 }
 
 .logo{
+    margin-top: 10px;
     float: left;
     width: 30%;
 }
@@ -326,6 +327,17 @@ input[type=submit] {
     cursor: pointer;
   }
 
+  #result_btn {
+    background-color: #2193b0;
+    color: white;
+    font-size: 125%;
+    width: 10%;
+    padding: 18px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
   #admin {
     float: right;
     background-color: #2193b0;
@@ -583,15 +595,15 @@ input[type=submit] {
         .next {
         cursor: pointer;
         position: absolute;
-        top: 50%;
+        top: 41%;
         width: auto;
         padding: 16px;
         margin-top: -22px;
-        color: white;
+        color: black;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 40px;
         transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
+        border-radius: 3px 3px 3px 3px;
         user-select: none;
         }
 
@@ -603,6 +615,7 @@ input[type=submit] {
 
         /* On hover, add a black background color with a little bit see-through */
         .next:hover {
+        color: white;
         background-color: rgba(0,0,0,0.8);
         }
 
@@ -638,7 +651,7 @@ input[type=submit] {
         transition: background-color 0.6s ease;
         }
 
-        .active, .dot:hover {
+        .dot:hover {
         background-color: #717171;
         }
 
