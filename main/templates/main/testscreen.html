@@ -68,8 +68,8 @@
                         <hr id ='hr'>
                     </div>
                 {% endfor %}
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                <input type='submit' name='save' value='Submit' id='log_btn'>
+                    <input type='submit' name='save' value='Submit' onclick="alert('Are you sure you want to submit the test?')" id='log_btn' disabled>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>   
             </div>
         </div>
     </div>
@@ -164,8 +164,9 @@
             var slides = document.getElementsByClassName("mySlides");
 
             if (n>slides.length){
-                document.getElementsByClassName("next").hide()
+                document.getElementsByClassName("next").hide();
             }
+            if (n==50){document.getElementById("log_btn").disabled=false;}
 
             if(n<1){
                 slideIndex=slides.length;
