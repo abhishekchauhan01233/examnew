@@ -305,7 +305,7 @@ body{
   text-align: center;
 }
 
-input[type=text], input[type=password], input[type=date],input[type=time],input[type=number],input[type=file], textarea, select{
+input[type=text], input[type=password], input[type=date], input[type=email], input[type=time],input[type=number],input[type=file], textarea, select{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

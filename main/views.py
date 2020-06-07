@@ -6,6 +6,7 @@ from django.db.models import Q, Count
 from .models import scheduletestmodel, feedbackmodel,uploadquestionpapermodel, studentdatamodel, resultmodel
 from datetime import datetime, date, time
 import smtplib
+from email.mime.text import MIMEText as text
 
 # Create your views here.
 
@@ -104,7 +105,7 @@ def studentregister(request):
                     s = smtplib.SMTP("smtp.gmail.com",  587)
                     s.starttls()
                     s.login('Gangascholarshiptest@gmail.com','hitanshusaluja1')
-                    message = '''Dear Candidate
+                    message = ''' Dear Candidate
 
 Thank you for registring to our form of Online Admission cum Scholarship Test 2020 (GST-20).
 Scholarship Test is scheduled on 21st June 2020 at 11:00 AM.
@@ -120,7 +121,11 @@ Co-cordinator :- Mr. Ritesh (8684000920)
 
 Other Helpline Numbers: 08684000906 / 920 / 925 / 934
 '''
-                    s.sendmail("Gangascholarshiptest@gmail.com", email, message)
+                    m = text(message)
+                    m['Subject'] = 'Ganga Scholarship Test (21st June, 11:00AM)' 
+                    m['From'] = 'Gangascholarshiptest@gmail.com'
+                    m['To'] = email
+                    s.sendmail("Gangascholarshiptest@gmail.com", email, m.as_string())
                     s.quit()
                     return redirect('/studentlogin/')
             else:
