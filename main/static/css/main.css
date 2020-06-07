@@ -55,6 +55,11 @@ body{
     color:#2193b0;
 }
 
+#developed_data{
+    font-weight: 500;
+    font-size: 100%;
+}
+
 .gtc{
     float: left;
     width: 70%;
@@ -244,7 +249,7 @@ body{
 
 .developed{
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 10px;
     margin-left: 5%; 
     margin-right: 5%;
