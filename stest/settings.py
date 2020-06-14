@@ -42,6 +42,13 @@ INSTALLED_APPS = [
     'import_export',
 ]
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'Gangascholarshiptest@gmail.com'
+EMAIL_HOST_PASSWORD = 'hitanshusaluja1'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'Gangascholarshiptest@gmail.com'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

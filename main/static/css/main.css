@@ -25,6 +25,12 @@ body{
     color:antiquewhite;
 }
 
+#text{
+    text-align: center;
+    font-size: 250%;
+    color:#2193b0;
+}
+
 #welcome{
     font-size: 320%;
     color:  #2193b0;
@@ -60,15 +66,37 @@ body{
     font-size: 100%;
 }
 
+#forgotpass{
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .gtc{
     float: left;
     width: 70%;
 }
 
 .logo{
-    margin-top:25px;
+    margin-top: 10px;
     float: left;
     width: 30%;
+}
+
+.email{
+    float: left;
+    width:35%;
+    margin-left: 25%;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+.submit{
+    float: right;
+    width: 15%;
+    margin-right: 25%;
+    margin-top: 1px;
+    padding: 10px 20px; 
 }
 
 .field{
@@ -247,7 +275,7 @@ body{
     text-align: center;
   }
 
-.developed{
+  .developed{
     border-radius: 5px;
     background-color: white;
     padding: 10px;
@@ -269,6 +297,18 @@ body{
   margin-bottom: 5%;
   text-align: center;
 }
+
+.main_student_reset{
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.4);
+    background-color: whitesmoke;
+    padding: 10px;
+    margin-left: 28%; 
+    margin-right: 28%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
 
 .main_profile{
     border-radius: 5px;
@@ -305,7 +345,7 @@ body{
   text-align: center;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=date],input[type=time],input[type=number],input[type=file], textarea, select{
+input[type=text], input[type=password], input[type=date],input[type=time],input[type=email],input[type=number],input[type=file], textarea, select{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -396,6 +436,18 @@ input[type=submit] {
     font-size: 100%;
     width: 100%;
     padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#fg_pass{
+    background-color: #2193b0;
+    color: white;
+    font-size: 100%;
+    width: 100%;
+    padding: 12px 14px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -523,11 +575,6 @@ input[type=submit] {
             padding: 14px 16px;
             text-decoration: none;
             font-size: 50px;
-        }
-        
-        #navbar a:hover {
-            background-color: #ddd;
-            color: black;
         }
         
         .content {
