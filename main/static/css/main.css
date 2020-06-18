@@ -529,6 +529,14 @@ input[type=submit] {
             background-color: #eee;
             border-radius: 50%;
         }
+        .option{
+            float:left;
+            width:94%;
+        }
+        .click{
+            float:left;
+            width:6%;
+        }
         /* On mouse-over, add a grey background color */
         
         .containert:hover input~.checkmark {

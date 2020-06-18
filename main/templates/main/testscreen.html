@@ -61,15 +61,22 @@
                                 <h2 id="timer" name="timer"></h2>
                             </div>
                         </div>
-                        <label class="containert">{{ d.optiona }}<input type="radio" name={{d.qno}} value='a'><span class="checkmark"></span></label>
-                        <label class="containert">{{ d.optionb }}<input type="radio" name={{d.qno}} value='b'><span class="checkmark"></span></label>
-                        <label class="containert">{{ d.optionc }}<input type="radio" name={{d.qno}} value='c'><span class="checkmark"></span></label>
-                        <label class="containert">{{ d.optiond }}<input type="radio" name={{d.qno}} value='d'><span class="checkmark"></span></label>
+                        <div class ='rowt'>
+                            <div class='option'>
+                                <label class="containert">{{ d.optiona }}<input type="radio" name={{d.qno}} value='a'><span class="checkmark"></span></label>
+                                <label class="containert">{{ d.optionb }}<input type="radio" name={{d.qno}} value='b'><span class="checkmark"></span></label>
+                                <label class="containert">{{ d.optionc }}<input type="radio" name={{d.qno}} value='c'><span class="checkmark"></span></label>
+                                <label class="containert">{{ d.optiond }}<input type="radio" name={{d.qno}} value='d'><span class="checkmark"></span></label>   
+                            </div>
+                            <div class='click'>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                        </div>
                         <hr id ='hr'>
                     </div>
                 {% endfor %}
                     <input type='submit' name='save' value='Submit' onclick="alert('Are you sure you want to submit the test?')" id='log_btn' disabled>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>   
+   
             </div>
         </div>
     </div>
@@ -167,7 +174,9 @@
             if (n>slides.length){
                 document.getElementsByClassName("next").hide();
             }
-            if (n==50){document.getElementById("log_btn").disabled=false;}
+            if (n==50){
+                document.getElementById("log_btn").disabled=false;
+            }
 
             if(n<1){
                 slideIndex=slides.length;
