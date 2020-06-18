@@ -16,6 +16,9 @@ def home(request):
     else:
         if request.POST.get('asave'):
             return redirect('/admin/')
+        
+        elif request.POST.get('rsave'):
+            return redirect('/studentregister/')
 
         elif request.POST.get('lsave'):
             return redirect('/studentlogin/')
