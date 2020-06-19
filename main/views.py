@@ -22,6 +22,9 @@ def home(request):
 
         elif request.POST.get('lsave'):
             return redirect('/studentlogin/')
+        
+        elif request.POST.get('tsave'):
+            return redirect('/tutorial/')
 
         elif request.POST.get('msave'):
             return redirect('/exampattern/')
@@ -39,6 +42,12 @@ def home(request):
             return redirect('/scholarships/')
 
         return render(request, 'main/home.html')
+
+def tutorial(request):
+    if request.user.is_authenticated:
+        return redirect('/tutorial/')
+    else:
+        return render(request, 'main/tutorial.html')
 
 def exampattern(request):
     if request.user.is_authenticated:
