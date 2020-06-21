@@ -16,6 +16,11 @@ body{
     color: antiquewhite;
 }
 
+#row2_s{
+    font-size: 135%;
+    color: antiquewhite;
+}
+
 #row2,#row3,#row4, #row5{
     color: antiquewhite;
 }
@@ -29,6 +34,10 @@ body{
     text-align: center;
     font-size: 250%;
     color:#2193b0;
+}
+
+#a, a {
+    color: #121212;
 }
 
 #welcome{
@@ -101,6 +110,12 @@ body{
 
 .field{
     float: left;
+    width: 70%;
+    margin-top: 6px;
+}
+
+.field_feed{
+    float: left;
     width: 77%;
     margin-top: 6px;
 }
@@ -155,6 +170,12 @@ body{
 }
 
 .label{
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+}
+
+.label_feed{
     float: left;
     width: 23%;
     margin-top: 6px;
