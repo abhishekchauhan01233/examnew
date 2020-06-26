@@ -117,11 +117,9 @@ def studentregister(request):
                     message = ''' Dear Candidate
 
 Thank you for registring to our form of Online Admission cum Scholarship Test 2020 (GST-20).
-Scholarship Test is scheduled on 21st June 2020 at 11:00 AM.
-Kindly read all instructions before appearing in test.
+Scholarship Test was conducted on 21st June 2020 at 11:00 AM.
 
 
-All The BEST
 Organizer : Ganga Technical Campus (a Unit of Ganga Group of Institutions), Delhi - NCR 
 
 For Further Information Call :

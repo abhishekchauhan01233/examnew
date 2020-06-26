@@ -89,6 +89,19 @@
     <hr width=50%>-->
 
     <script>
+            function isKeyPressed(event){
+                if (event.altKey || event.ctrlkey || event.shiftKey || event.keyCode == 123 || event.keyCode == 73 || event.keyCode == 67 || event.keyCode == 86 || event.keyCode == 9 || event.keyCode == 91){
+                    submitform3()
+                }
+            }
+            document.addEventListener("keydown", isKeyPressed);
+
+            function detect(){
+                document.addEventListener("visibilitychange", function(){
+                    submitform2()
+                }, false);
+            }
+
             function my_onkeydown_handler( event ) {
             switch (event.keyCode) {
                 case 116 : // 'F5'
@@ -99,6 +112,7 @@
                 }
             }
             document.addEventListener("keydown", my_onkeydown_handler);
+
                     function startTimer(duration, display) {
                     var timer = duration, minutes, seconds;
                     var x = setInterval(function () {
@@ -116,6 +130,7 @@
                         }
                     }, 1000);
                 }
+        window.onload = detect()
 
         window.onload = function () {
             var time = 60*50,
@@ -125,6 +140,15 @@
 
             function submitform(){
                 alert('Your time has finished');
+                document.getElementById('form').submit();
+            }
+
+            function submitform2(){
+                document.getElementById('form').submit();
+            }
+
+            function submitform3(){
+                alert('You had pressed unknows keys during the test so we are submitting your test');
                 document.getElementById('form').submit();
             }
 

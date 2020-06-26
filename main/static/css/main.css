@@ -319,6 +319,29 @@ body{
   text-align: center;
 }
 
+.main_student_login2{
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to bottom, #2193b0, #6dd5ed);
+    padding: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    float: right;
+  }
+
+.main_instructions{
+    width: 50%;
+    border-radius: 5px;
+    background-color: white;
+    color: #2193b0;
+    padding: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    float:left;
+  }
+
 .main_student_reset{
     border-radius: 5px;
     box-shadow: 0px 0px 30px 3px rgba(0, 0, 0, 0.4);

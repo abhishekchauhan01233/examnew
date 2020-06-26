@@ -18,10 +18,20 @@
         </div>
     </div>
 
+    <div class='row'>
+    <div class="main_instructions animated bounceInLeft">
+        <h1 align='center' style='color:#2193b0; font-size:240%;'>INSTRUCTIONS</h1>
+        <h1 align='left' style='color:#2193b0; font-size:135%;'>1. Don't open new window/tab or any other app</h1>
+        <h1 align='left' style='color:#2193b0; font-size:135%;'>2. Don't right click of mouse</h1>
+        <h1 align='left' style='color:#2193b0; font-size:135%;'>3. Don't minimize Browser window</h1>
+        <h1 align='left' style='color:#2193b0; font-size:135%;'>4. Don't press home or back button </h1>
+        <h1 align='left' style='color:#2193b0; font-size:150%;'><u>All the above activities will lead to test auto submit</u> and you won't be able to five exam again</h1>
+    </div>
+
     <form method = 'POST' class='form-group'>
         {% csrf_token %}
         {{form|crispy}}
-        <div class="main_student_login animated bounceInLeft">
+        <div class="main_student_login2 animated bounceInLeft">
             <h1 id='log'><b>Upcoming Test</b></h1>
             <hr>
             <div class="rowt">
@@ -103,8 +113,9 @@
                 <input type='submit' name='save' value='Take Test' id='log_btn'>
             </div>
         </div>
-        <p align="center" id='about_data'><b>COPYRIGHT &copy; 2014-2020 GTC </b></p>
+        </div>
     </form>
+    <p align="center" id='about_data'><b>COPYRIGHT &copy; 2014-2020 GTC </b></p>
 <!-- !Disclaimer - you must not use this website's template in as it is form - please feel free 
 to contact me @ chiragchauhan12323@gmail.com for the source code and implementation in your use case -
 After all I too did take some help from the community -->
