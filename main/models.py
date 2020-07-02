@@ -22,6 +22,9 @@ class scheduletestmodel(models.Model):
 
     def __str__(self):
         return self.course
+    
+    class Meta:
+        verbose_name_plural = 'Schedule Test'
 
 class feedbackmodel(models.Model):
     name = models.CharField(max_length=50)
@@ -31,6 +34,9 @@ class feedbackmodel(models.Model):
 
     def __str__(self):
         return self.email
+    
+    class Meta:
+        verbose_name_plural = 'Feedback'
 
 class studentdatamodel(models.Model):
     courses = (
@@ -87,6 +93,9 @@ class studentdatamodel(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+    class Meta:
+        verbose_name_plural = 'Student Data'
 
 class uploadquestionpapermodel(models.Model):
     qno = models.BigIntegerField()
@@ -98,6 +107,12 @@ class uploadquestionpapermodel(models.Model):
     answer = models.CharField(max_length=200)
     subject = models.CharField(max_length=100, default=None)
 
+    def __str__(self):
+        return self.subject
+
+    class Meta:
+        verbose_name_plural = 'Question Papers'
+
 class resultmodel(models.Model):
     email = models.EmailField(max_length=200)
     name = models.CharField(max_length=60)
@@ -108,4 +123,7 @@ class resultmodel(models.Model):
 
     def __str__(self):
         return self.email
+
+    class Meta:
+        verbose_name_plural = 'Result'
 
